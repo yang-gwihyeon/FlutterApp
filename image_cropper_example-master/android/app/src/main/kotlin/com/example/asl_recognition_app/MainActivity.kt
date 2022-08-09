@@ -1,4 +1,4 @@
-package com.example.image_cropper_example
+package com.example.asl_recognition_app
 
 import io.flutter.embedding.android.FlutterActivity
 
