@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             color: Colors.grey[600],
           ),
           appBarTheme: const AppBarTheme(
-            backgroundColor: Color.fromARGB(255, 74, 188, 142),
+            backgroundColor: Color.fromARGB(255, 173, 188, 74),
             centerTitle: false,
             foregroundColor: Colors.white,
             actionsIconTheme: IconThemeData(color: Colors.white),

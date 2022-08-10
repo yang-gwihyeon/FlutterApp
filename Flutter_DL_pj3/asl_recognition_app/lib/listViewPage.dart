@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:group_list_view/group_list_view.dart';
 
 
-
+List imageName = ["images/001.jpg","images/002.jpg","images/003.jpg","images/004.jpg","images/005.jpg","images/006.jpg","images/007.jpg","images/008.jpg","images/009.jpg","images/010.jpg"];
 class ListviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,21 +13,26 @@ class ListviewPage extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('수화 '),
+          title: Text('수화 정보'),
         ),
         body: GroupListView(
           sectionsCount: 1,
           countOfItemInSection: (int section) {
-            return 11;
+            return 10;
           },
           itemBuilder: _itemBuilder,
           groupHeaderBuilder: (BuildContext context, int section) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-              child: Text(
-                "             숫자 0~10 수화",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
-                
+              child: Column(
+                children: [
+                   SizedBox(height: 15),
+                  Text(
+                    "숫자 0~10 수화",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                    
+                  ),
+                ],
               ),
             );
           },
@@ -61,7 +66,7 @@ class ListviewPage extends StatelessWidget {
   
             title: Row(
               children: [
-                Image.asset('images/01.png',width: 310, height: 200,)
+                Image.asset(imageName[index.index],width: 310, height: 200,)
               ],
             ),
      

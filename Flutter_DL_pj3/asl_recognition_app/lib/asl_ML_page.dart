@@ -61,7 +61,7 @@ class _aslPageState extends State<aslPage> {
                              context: context,
                              builder: (BuildContext context) {
                                return Container(
-                    height: 350,
+                    height: 280,
                     color: Color.fromARGB(255, 224, 223, 212),
                     child: Center(
                       child: Column(
@@ -70,28 +70,26 @@ class _aslPageState extends State<aslPage> {
                         children: <Widget>[
                   
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    SizedBox(width: 2),
                                     Column(
                                       children: [
-                                        Image.asset('images/0.jpeg',width: 180, height: 200,),
+                                        Image.asset('images/001.png',width: 150, height: 200,),
                                         Padding(
                                           padding: const EdgeInsets.all(15.0),
-                                          child: Text("1. 사용법"),
+                                          child: Text("1. 검정 배경 사진 선택 혹은 촬영"),
                                         )
                                       ],
                                     ),
-                                    SizedBox(width: 10),
                                     Column(
                                       children: [
-                                        Image.asset('images/0.jpeg',width: 180, height: 200,),
+                                        Image.asset('images/002.png',width: 150, height: 200,),
                                          Padding(
                                            padding: const EdgeInsets.all(15.0),
-                                           child: Text("2. 사용법"),
+                                           child: Text("2. 예시처럼 크기 조정"),
                                          )
                                       ],
                                     )
@@ -365,7 +363,7 @@ class _aslPageState extends State<aslPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text("Face Recognition"),
-            content: Text("상기 얼굴의 이름은 $result 입니다."),
+            content: Text("상기 사진은 $result 의 수화입니다."),
             actions: [
               ElevatedButton(
                 style: ButtonStyle(
