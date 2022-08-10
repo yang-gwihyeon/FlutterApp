@@ -14,6 +14,7 @@ class ListviewPage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('수화 정보'),
+          backgroundColor:  Color.fromARGB(255, 138, 209, 58),
         ),
         body: GroupListView(
           sectionsCount: 1,
@@ -46,7 +47,7 @@ class ListviewPage extends StatelessWidget {
         },
         label: const Text('Back'),
         icon: const Icon(Icons.arrow_back),
-        backgroundColor: Colors.pink,
+        backgroundColor: Color.fromARGB(255, 74, 188, 142),
       ),
       ),
     );

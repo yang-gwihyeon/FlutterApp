@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Together!',
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch:Colors.green , 
       ),
       home: AnimatedSplashScreen(
           // 스플래쉬

@@ -34,7 +34,8 @@ class _aslPageState extends State<aslPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('수화 DeepLearning')
+      appBar: AppBar(title: Text('수화 DeepLearning'),
+      backgroundColor:Color.fromARGB(255, 138, 209, 58),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
