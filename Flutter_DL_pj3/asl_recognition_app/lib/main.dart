@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage>
         ]
       ),
       bottomNavigationBar: Container(
-        color: Color.fromARGB(255, 121, 199, 161),
+        color: Color.fromARGB(201, 151, 228, 89),
         height: 80,
         child: TabBar(
           controller: tcontroller,

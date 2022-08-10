@@ -124,7 +124,7 @@ class _aslPageState extends State<aslPage> {
         },
         label: const Text('숫자 수화 알아보기 버튼'),
         icon: const Icon(Icons.thumb_up),
-        backgroundColor: Colors.pink,
+        backgroundColor: Color.fromARGB(255, 74, 188, 142),
       ),
     );
   }
