@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:ffi';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -20,38 +21,47 @@ class _driPageState extends State<driPage> {
   final TextEditingController tec3 = TextEditingController();
   late String? selectedValue;
   List<String> time = [];
-  
+
   @override
   void initState() {
-    for (int i=1; i <=48 ; i++){
-      time.add(today.add(Duration(hours: i)).toString().substring(0,13)+ ":00");
+    for (int i = 1; i <= 48; i++) {
+      time.add(
+          today.add(Duration(hours: i)).toString().substring(0, 13) + ":00");
     }
     selectedValue = time[0];
 
     super.initState();
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(title: Text('수화 DL')) ,
+      appBar: AppBar(
+        title: Text('따릉이 수요 예측'),
+        backgroundColor: Color.fromARGB(255, 138, 209, 58),
+      ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("지금은 "+today.toString().substring(0,16) + " 입니다"),
+            SizedBox(
+              height: 250,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("현재 시간 기준 2일 후까지의 수요 예측이 가능합니다."),
+              child: Text(
+                "지금은 " + today.toString().substring(0, 16) + " 입니다",
+                style: TextStyle(fontSize: 20),
+              ),
             ),
-
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const Text("현재 시간 기준 2일 후까지의 수요 예측이 가능합니다."),
+            ),
             DropdownButton<String>(
               value: selectedValue,
+              iconSize: 60,
+               elevation: 16,
               items: time
                   .map(
                     (String item) => DropdownMenuItem<String>(
@@ -66,13 +76,16 @@ class _driPageState extends State<driPage> {
                 });
               },
             ),
-
+            const SizedBox(
+              height: 50,
+            ),
             ElevatedButton(
+              
               onPressed: () {
-                  predict();
-              }, 
-              child: Text('예측하기')
-            ),            
+                predict();
+              },
+              child: Text('예측하기',style: TextStyle(fontSize: 20),),
+            ),
           ],
         ),
       ),
@@ -101,17 +114,17 @@ class _driPageState extends State<driPage> {
         });
   }
 
-  predict() async{
-
-    var url = Uri.parse("http://127.0.0.1:5000/dri?date=" + selectedValue! + "&today="+ today.toString().substring(0,14)+"00");
+  predict() async {
+    var url = Uri.parse("http://127.0.0.1:5000/dri?date=" +
+        selectedValue! +
+        "&today=" +
+        today.toString().substring(0, 14) +
+        "00");
     var response = await http.get(url);
     var jsondata = json.decode(utf8.decode(response.bodyBytes));
 
     var result = jsondata['result'];
 
     _showDialog(context, result);
-
   }
-
-
 }

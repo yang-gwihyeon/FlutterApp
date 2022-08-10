@@ -2,23 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:group_list_view/group_list_view.dart';
 
 
-void main() => runApp(MyApp());
-
-Map<String, List> _elements = {
-  'Team A': ['Klay Lewis', 'Ehsan Woodard', 'River Bains'],
-  'Team B': ['Toyah Downs', 'Tyla Kane'],
-  'Team C': ['Marcus Romero', 'Farrah Parkes', 'Fay Lawson', 'Asif Mckay'],
-  'Team D': [
-    'Casey Zuniga',
-    'Ayisha Burn',
-    'Josie Hayden',
-    'Kenan Walls',
-    'Mario Powers'
-  ],
-  'Team Q': ['Toyah Downs', 'Tyla Kane', 'Toyah Downs'],
-};
-
-class MyApp extends StatelessWidget {
+List imageName = ["images/001.jpg","images/002.jpg","images/003.jpg","images/004.jpg","images/005.jpg","images/006.jpg","images/007.jpg","images/008.jpg","images/009.jpg","images/010.jpg"];
+class ListviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,27 +13,42 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('수화 사진 페이지'),
+          title: Text('수화 정보'),
+          backgroundColor:  Color.fromARGB(255, 138, 209, 58),
         ),
         body: GroupListView(
           sectionsCount: 1,
           countOfItemInSection: (int section) {
-            return 11;
+            return 10;
           },
           itemBuilder: _itemBuilder,
           groupHeaderBuilder: (BuildContext context, int section) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-              child: Text(
-                "             숫자 0~10 수화",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
-                
+              child: Column(
+                children: [
+                   SizedBox(height: 15),
+                  Text(
+                    "숫자 0~10 수화",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                    
+                  ),
+                ],
               ),
             );
           },
           separatorBuilder: (context, index) => SizedBox(height: 10),
           sectionSeparatorBuilder: (context, section) => SizedBox(height: 10),
         ),
+          floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context).pop();
+    
+        },
+        label: const Text('Back'),
+        icon: const Icon(Icons.arrow_back),
+        backgroundColor: Color.fromARGB(255, 74, 188, 142),
+      ),
       ),
     );
   }
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
   
             title: Row(
               children: [
-                Image.asset('images/01.png',width: 310, height: 200,)
+                Image.asset(imageName[index.index],width: 310, height: 200,)
               ],
             ),
      

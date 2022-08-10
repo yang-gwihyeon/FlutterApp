@@ -16,9 +16,7 @@ import 'cropper/ui_helper.dart'
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(const MyApp());
-}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -112,7 +110,7 @@ class _HomePageState extends State<HomePage>
         ]
       ),
       bottomNavigationBar: Container(
-        color: Color.fromARGB(255, 121, 199, 161),
+        color: Color.fromARGB(255, 138, 209, 58),
         height: 80,
         child: TabBar(
           controller: tcontroller,
@@ -121,13 +119,13 @@ class _HomePageState extends State<HomePage>
           tabs: const [
             Tab(
               icon: Icon(Icons.pedal_bike,
-              color:  Colors.deepPurple,
+              color:  Colors.indigo,
               ),
               text: '따릉이 예측',
             ),
             Tab(
               icon: Icon(Icons.back_hand_sharp,
-              color:  Colors.indigo,
+              color:Colors.indigo,
               ),
               text: '미국식 수화',
             ),

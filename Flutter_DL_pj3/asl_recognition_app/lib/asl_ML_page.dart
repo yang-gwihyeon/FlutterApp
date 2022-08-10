@@ -34,7 +34,8 @@ class _aslPageState extends State<aslPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('따릉이 수요 예측')
+      appBar: AppBar(title: Text('수화 DeepLearning'),
+      backgroundColor:Color.fromARGB(255, 138, 209, 58),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -61,7 +62,7 @@ class _aslPageState extends State<aslPage> {
                              context: context,
                              builder: (BuildContext context) {
                                return Container(
-                    height: 350,
+                    height: 280,
                     color: Color.fromARGB(255, 224, 223, 212),
                     child: Center(
                       child: Column(
@@ -70,28 +71,26 @@ class _aslPageState extends State<aslPage> {
                         children: <Widget>[
                   
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    SizedBox(width: 2),
                                     Column(
                                       children: [
-                                        Image.asset('images/0.jpeg',width: 180, height: 200,),
+                                        Image.asset('images/001.png',width: 150, height: 200,),
                                         Padding(
                                           padding: const EdgeInsets.all(15.0),
-                                          child: Text("1. 사용법"),
+                                          child: Text("1. 검정 배경 사진 선택 혹은 촬영"),
                                         )
                                       ],
                                     ),
-                                    SizedBox(width: 10),
                                     Column(
                                       children: [
-                                        Image.asset('images/0.jpeg',width: 180, height: 200,),
+                                        Image.asset('images/002.png',width: 150, height: 200,),
                                          Padding(
                                            padding: const EdgeInsets.all(15.0),
-                                           child: Text("2. 사용법"),
+                                           child: Text("2. 예시처럼 크기 조정"),
                                          )
                                       ],
                                     )
@@ -119,6 +118,14 @@ class _aslPageState extends State<aslPage> {
             ],
           ))),
         ],
+      ),
+            floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+         Navigator.pushNamed(context, '/2nd');
+        },
+        label: const Text('숫자 수화 알아보기 버튼'),
+        icon: const Icon(Icons.thumb_up),
+        backgroundColor: Color.fromARGB(255, 74, 188, 142),
       ),
     );
   }
@@ -357,7 +364,7 @@ class _aslPageState extends State<aslPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text("Face Recognition"),
-            content: Text("상기 얼굴의 이름은 $result 입니다."),
+            content: Text("상기 사진은 $result 의 수화입니다."),
             actions: [
               ElevatedButton(
                 style: ButtonStyle(
