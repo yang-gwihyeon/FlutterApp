@@ -35,7 +35,7 @@ class _driPageState extends State<driPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(title: Text('수화 DL')) ,
+      appBar:AppBar(title: Text('따릉이 수요 예측')) ,
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

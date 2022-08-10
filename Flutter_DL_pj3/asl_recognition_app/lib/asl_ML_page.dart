@@ -34,7 +34,7 @@ class _aslPageState extends State<aslPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('따릉이 수요 예측')
+      appBar: AppBar(title: Text('수화 DeepLearning')
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -119,6 +119,14 @@ class _aslPageState extends State<aslPage> {
             ],
           ))),
         ],
+      ),
+            floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+         Navigator.pushNamed(context, '/2nd');
+        },
+        label: const Text('숫자 수화 알아보기 버튼'),
+        icon: const Icon(Icons.thumb_up),
+        backgroundColor: Colors.pink,
       ),
     );
   }

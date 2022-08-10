@@ -16,9 +16,7 @@ import 'cropper/ui_helper.dart'
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(const MyApp());
-}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -2,23 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:group_list_view/group_list_view.dart';
 
 
-void main() => runApp(MyApp());
 
-Map<String, List> _elements = {
-  'Team A': ['Klay Lewis', 'Ehsan Woodard', 'River Bains'],
-  'Team B': ['Toyah Downs', 'Tyla Kane'],
-  'Team C': ['Marcus Romero', 'Farrah Parkes', 'Fay Lawson', 'Asif Mckay'],
-  'Team D': [
-    'Casey Zuniga',
-    'Ayisha Burn',
-    'Josie Hayden',
-    'Kenan Walls',
-    'Mario Powers'
-  ],
-  'Team Q': ['Toyah Downs', 'Tyla Kane', 'Toyah Downs'],
-};
-
-class MyApp extends StatelessWidget {
+class ListviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +13,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('수화 사진 페이지'),
+          title: Text('수화 '),
         ),
         body: GroupListView(
           sectionsCount: 1,
@@ -49,6 +34,15 @@ class MyApp extends StatelessWidget {
           separatorBuilder: (context, index) => SizedBox(height: 10),
           sectionSeparatorBuilder: (context, section) => SizedBox(height: 10),
         ),
+          floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context).pop();
+    
+        },
+        label: const Text('Back'),
+        icon: const Icon(Icons.arrow_back),
+        backgroundColor: Colors.pink,
+      ),
       ),
     );
   }
